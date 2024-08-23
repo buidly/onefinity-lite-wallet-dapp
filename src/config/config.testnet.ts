@@ -48,10 +48,10 @@ export const networks: NetworkType[] = [
   {
     default: true,
     id: EnvironmentsEnum.testnet,
-    name: 'Testnet',
-    apiAddress: 'https://testnet-api.multiversx.com',
+    name: 'onefinity-testnet',
+    apiAddress: 'https://testnet-api.onefinity.network',
     gatewayUrl: '',
-    sampleAuthenticatedDomains: ['https://testnet-api.multiversx.com'],
+    sampleAuthenticatedDomains: ['https://testnet-api.onefinity.network'],
     sovereignContractAddress: '',
     WEGLDid: ''
   }
