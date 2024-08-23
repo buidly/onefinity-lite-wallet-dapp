@@ -3,4 +3,4 @@ export {
   UserSecretKey,
   UserWallet,
   UserSigner
-} from '@multiversx/sdk-wallet';
+} from 'sdk-wallet';

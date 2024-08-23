@@ -1,4 +1,4 @@
-import { UserSecretKey, UserWallet } from '@multiversx/sdk-wallet';
+import { UserSecretKey, UserWallet } from 'sdk-wallet';
 import { Mnemonic } from '@multiversx/sdk-wallet/out';
 
 interface GetKeysFromMnemonicParamsType {
