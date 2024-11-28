@@ -32,13 +32,13 @@ export const networks: NetworkType[] = [
     default: true,
     id: 'sovereign',
     name: 'Sovereign',
-    apiAddress: 'https://api-sovereign-test.elrond.ro',
-    gatewayUrl: '',
-    extrasApi: 'https://extras-api-sovereign-test.elrond.ro',
-    sampleAuthenticatedDomains: ['https://api-sovereign-test.elrond.ro'],
+    apiAddress: 'https://api.internal.onefinity.network',
+    gatewayUrl: 'https://gateway.internal.onefinity.network',
+    extrasApi: 'https://api.internal.onefinity.network',
+    sampleAuthenticatedDomains: ['https://api.internal.onefinity.network'],
     sovereignContractAddress: '',
-    walletAddress: 'https://wallet.voyager1.dev',
-    WEGLDid: 'WEGLD-bd4d79'
+    walletAddress: 'https://litewallet.internal.onefinity.network',
+    WEGLDid: ''
   },
   {
     default: false,
