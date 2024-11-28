@@ -32,12 +32,12 @@ export const networks: NetworkType[] = [
     default: true,
     id: 'sovereign',
     name: 'Sovereign',
-    apiAddress: 'https://api.internal.onefinity.network',
-    gatewayUrl: 'https://gateway.internal.onefinity.network',
-    extrasApi: 'https://api.internal.onefinity.network',
-    sampleAuthenticatedDomains: ['https://api.internal.onefinity.network'],
+    apiAddress: 'https://testnet-api.onefinity.network',
+    gatewayUrl: 'https://testnet-gateway.onefinity.network',
+    extrasApi: 'https://extras-api.multiversx.com',
+    sampleAuthenticatedDomains: ['https://testnet-api.onefinity.network'],
     sovereignContractAddress: '',
-    walletAddress: 'https://litewallet.internal.onefinity.network',
+    walletAddress: 'https://testnet-litewallet.onefinity.network',
     WEGLDid: ''
   },
   {
