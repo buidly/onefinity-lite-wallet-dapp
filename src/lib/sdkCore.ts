@@ -19,3 +19,6 @@ export {
   UserWallet,
   UserSigner
 } from '@multiversx/sdk-core/out/wallet';
+import { LibraryConfig } from "@multiversx/sdk-core";
+
+LibraryConfig.DefaultAddressHrp = "one";
