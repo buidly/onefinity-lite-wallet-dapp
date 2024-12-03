@@ -1,37 +1,14 @@
 import { MxLink } from 'components';
-import {
-  ExtensionLoginButton,
-  LedgerLoginButton,
-  OperaWalletLoginButton,
-  WalletConnectLoginButton,
-  XaliasLoginButton
-} from 'components/sdkDapp.components';
-import { nativeAuth } from 'config';
-import { DataTestIdsEnum } from 'localConstants';
-import { routeNames } from 'routes';
-import {
-  LedgerLoginButtonPropsType,
-  OperaWalletLoginButtonPropsType,
-  WalletConnectLoginButtonPropsType
-} from 'types';
+import { EvmConnectButton } from 'components/EvmConnectButton';
+import { DataTestIdsEnum, HooksEnum } from 'localConstants';
+import { useSelector } from 'react-redux';
+import { hookSelector } from 'redux/selectors';
 import { AuthRedirectWrapper } from 'wrappers';
-import { Keystore, Pem } from './components';
-import { useUnlockRedirect } from './hooks';
 import { CreateRecoverRoutesEnum } from '../CreateRecover/routes';
-
-type CommonPropsType =
-  | OperaWalletLoginButtonPropsType
-  | LedgerLoginButtonPropsType
-  | WalletConnectLoginButtonPropsType;
+import { Keystore, Pem } from './components';
 
 export const Unlock = () => {
-  const onUnlockRedirect = useUnlockRedirect();
-
-  const commonProps: CommonPropsType = {
-    callbackRoute: routeNames.dashboard,
-    nativeAuth,
-    onLoginRedirect: () => onUnlockRedirect()
-  };
+  const { type: hook } = useSelector(hookSelector);
 
   return (
     <AuthRedirectWrapper requireAuth={false}>
@@ -47,7 +24,7 @@ export const Unlock = () => {
           </div>
 
           <div className='flex flex-col md:flex-row'>
-            <WalletConnectLoginButton
+            {/* <WalletConnectLoginButton
               loginButtonText='xPortal App'
               {...commonProps}
             />
@@ -65,7 +42,9 @@ export const Unlock = () => {
               loginButtonText='xAlias'
               data-testid='xAliasLoginBtn'
               {...commonProps}
-            />
+            /> */}
+
+            {hook !== HooksEnum.login && <EvmConnectButton />}
 
             <Pem />
             <Keystore />

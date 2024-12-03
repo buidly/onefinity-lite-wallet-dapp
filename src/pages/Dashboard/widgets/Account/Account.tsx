@@ -1,8 +1,8 @@
 import QRCode from 'react-qr-code';
 import { useSelector } from 'react-redux';
-import { Copy, MxLink } from 'components';
+import { Copy, Label, MxLink } from 'components';
 import { FormatAmount } from 'components/sdkDapp.components';
-import { useGetAccountInfo, useGetNetworkConfig } from 'lib';
+import { useGetNetworkConfig } from 'lib';
 import { DataTestIdsEnum } from 'localConstants';
 import { Faucet } from 'pages/Faucet';
 import {
@@ -11,13 +11,14 @@ import {
 } from 'redux/sdkDapp.store';
 import { networkSelector } from 'redux/selectors';
 import { routeNames } from 'routes';
+import { useGlobalContext } from 'context/useGlobalContext';
 
 export const Account = () => {
   const { network } = useGetNetworkConfig();
   const { activeNetwork } = useSelector(networkSelector);
-  const { address, account } = useGetAccountInfo();
   const explorerAddress = useSdkDappSelector(explorerAddressSelector);
   const isSovereign = activeNetwork.id === 'sovereign';
+  const { mvxAddressFromApi, evmAddressFromApi, balance } = useGlobalContext();
 
   return (
     <div className='rounded-xl bg-gray-950 p-6 text-white sm:text-left'>
@@ -27,19 +28,31 @@ export const Account = () => {
             Account
           </div>
           <div>
-            <div className='text-sm text-gray-400'>Your address:</div>
-            <div
-              className='overflow-hidden break-all text-sm'
-              data-testid={DataTestIdsEnum.userAddress}
-            >
-              {address}
-              <Copy value={address} />
-            </div>
+            {mvxAddressFromApi && (
+              <div
+                className='overflow-hidden break-all text-sm'
+                data-testid={DataTestIdsEnum.userAddress}
+              >
+                <Label>ONE: </Label>
+                {mvxAddressFromApi}
+                <Copy value={mvxAddressFromApi} />
+              </div>
+            )}
+            {evmAddressFromApi && (
+              <div
+                className='overflow-hidden break-all text-sm'
+                data-testid={DataTestIdsEnum.userAddress}
+              >
+                <Label>EVM: </Label>
+                {evmAddressFromApi}
+                <Copy value={evmAddressFromApi} />
+              </div>
+            )}
           </div>
           <div className='my-1 flex justify-center sm:hidden'>
             <QRCode
               className='rounded-lg border-8 border-white bg-white'
-              value={address ?? ''}
+              value={mvxAddressFromApi ?? evmAddressFromApi ?? ''}
               size={200}
               fgColor='#030712'
             />
@@ -50,7 +63,7 @@ export const Account = () => {
               <div className='flex items-center justify-start gap-2 '>
                 <span className='text-xl'>
                   <FormatAmount
-                    value={account.balance}
+                    value={balance}
                     egldLabel={network.egldLabel}
                     data-testid='balance'
                   />
@@ -60,7 +73,9 @@ export const Account = () => {
           </div>
           <div className='flex flex-row flex-wrap gap-4'>
             <a
-              href={`${explorerAddress}/accounts/${address}`}
+              href={`${explorerAddress}/accounts/${
+                mvxAddressFromApi ?? evmAddressFromApi ?? ''
+              }`}
               target='_blank'
               className='inline-block rounded-lg gradient-button px-4 py-2 text-sm text-white'
             >
@@ -102,7 +117,7 @@ export const Account = () => {
         <div className='mb-2 hidden justify-center sm:block'>
           <QRCode
             className='rounded-lg border-8 border-white bg-white'
-            value={address ?? ''}
+            value={mvxAddressFromApi ?? evmAddressFromApi ?? ''}
             size={120}
             fgColor='#030712'
           />

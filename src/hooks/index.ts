@@ -10,3 +10,5 @@ export * from './useScrollToElement';
 export * from './useSendTransactions';
 export * from './useSignTxSchema';
 export * from './withPageTitle';
+export * from './useGetMetamaskAccount';
+export * from './useTrackTransactions';

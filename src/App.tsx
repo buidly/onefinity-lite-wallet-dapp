@@ -1,5 +1,5 @@
 import { Provider, useSelector } from 'react-redux';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import {
@@ -11,6 +11,7 @@ import {
 } from 'components';
 
 import { apiTimeout, walletConnectV2ProjectId } from 'config';
+import { GlobalProvider } from 'context/GlobalProvider';
 import { provider } from 'helpers/app';
 import { PageNotFound, Unlock } from 'pages';
 import { routeNames, routes } from 'routes';
@@ -49,20 +50,22 @@ const AppContent = () => {
         }
       }}
     >
-      <Layout>
-        <Routes>
-          <Route path={routeNames.unlock} element={<Unlock />} />
-          {routes.map((route) => (
-            <Route
-              path={route.path}
-              key={`route-key-'${route.path}`}
-              element={<route.component />}
-            />
-          ))}
-          <Route path='*' element={<PageNotFound />} />
-        </Routes>
-        <Utilities />
-      </Layout>
+      <GlobalProvider>
+        <Layout>
+          <Routes>
+            <Route path={routeNames.unlock} element={<Unlock />} />
+            {routes.map((route) => (
+              <Route
+                path={route.path}
+                key={`route-key-'${route.path}`}
+                element={<route.component />}
+              />
+            ))}
+            <Route path='*' element={<PageNotFound />} />
+          </Routes>
+          <Utilities />
+        </Layout>
+      </GlobalProvider>
     </DappProvider>
   );
 };
