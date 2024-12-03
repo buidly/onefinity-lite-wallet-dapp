@@ -1,11 +1,15 @@
 import { MxLink } from 'components';
-import { DataTestIdsEnum } from 'localConstants';
+import { DataTestIdsEnum, HooksEnum } from 'localConstants';
 import { AuthRedirectWrapper } from 'wrappers';
 import { CreateRecoverRoutesEnum } from '../CreateRecover/routes';
 import { Keystore, Pem } from './components';
 import { crossEcosystemDashboard } from 'config';
+import { useSelector } from 'react-redux';
+import { hookSelector } from 'redux/selectors';
 
 export const Unlock = () => {
+  const { type: hook } = useSelector(hookSelector);
+
   return (
     <AuthRedirectWrapper requireAuth={false}>
       <div className='flex justify-center items-center'>
@@ -62,17 +66,19 @@ export const Unlock = () => {
               </MxLink>
             </div>
           </div>
-          <div className='flex flex-col items-center justify-center mt-1 gap-1'>
-            <div className='flex flex-col md:flex-row md:gap-4 items-center justify-center'>
-              <a
-                href={`${crossEcosystemDashboard}`}
-                target='_blank'
-                className='text-black underline decoration-dotted hover:decoration-solid'
-              >
-                Go to cross ecosystem dashboard
-              </a>
+          {hook !== HooksEnum.login && (
+            <div className='flex flex-col items-center justify-center mt-1 gap-1'>
+              <div className='flex flex-col md:flex-row md:gap-4 items-center justify-center'>
+                <a
+                  href={`${crossEcosystemDashboard}`}
+                  target='_blank'
+                  className='text-black underline decoration-dotted hover:decoration-solid'
+                >
+                  Go to cross ecosystem dashboard
+                </a>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </AuthRedirectWrapper>
