@@ -4,7 +4,7 @@ import { useGetIsLoggedIn } from 'lib';
 import { DataTestIdsEnum, RouteNamesEnum } from 'localConstants';
 import { routeNames } from 'routes';
 import MultiversXLogo from '../../../assets/img/multiversx-logo.svg?react';
-import { NetworkSwitcher } from '../../NetworkSwitcher';
+// import { NetworkSwitcher } from '../../NetworkSwitcher';
 
 export const Header = () => {
   const isLoggedIn = useGetIsLoggedIn();
@@ -27,7 +27,7 @@ export const Header = () => {
 
       <nav className='h-full w-full text-sm sm:relative sm:left-auto sm:top-auto sm:flex sm:w-auto sm:flex-row sm:justify-end sm:bg-transparent'>
         <div className='flex justify-end container mx-auto items-center gap-2'>
-          <NetworkSwitcher />
+          {/* <NetworkSwitcher /> */}
 
           {isLoggedIn ? (
             <MxLink
