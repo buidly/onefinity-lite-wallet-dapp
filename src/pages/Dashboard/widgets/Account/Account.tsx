@@ -2,7 +2,7 @@ import QRCode from 'react-qr-code';
 import { useSelector } from 'react-redux';
 import { Copy, Label, MxLink } from 'components';
 import { FormatAmount } from 'components/sdkDapp.components';
-import { useGetNetworkConfig } from 'lib';
+import { useGetAccount, useGetAccountFromApi, useGetNetworkConfig } from 'lib';
 import { DataTestIdsEnum } from 'localConstants';
 import { Faucet } from 'pages/Faucet';
 import {
@@ -11,14 +11,18 @@ import {
 } from 'redux/sdkDapp.store';
 import { networkSelector } from 'redux/selectors';
 import { routeNames } from 'routes';
-import { useGlobalContext } from 'context/useGlobalContext';
+import { useMemo } from 'react';
 
 export const Account = () => {
   const { network } = useGetNetworkConfig();
   const { activeNetwork } = useSelector(networkSelector);
+  const { address, balance } = useGetAccount();
   const explorerAddress = useSdkDappSelector(explorerAddressSelector);
+  const accountFromApi = useGetAccountFromApi(address);
   const isSovereign = activeNetwork.id === 'sovereign';
-  const { mvxAddressFromApi, evmAddressFromApi, balance } = useGlobalContext();
+  const [mvxAddressFromApi, evmAddressFromApi] = useMemo(() => {
+    return [accountFromApi?.data?.address, accountFromApi?.data?.evmAddress];
+  }, [accountFromApi]);
 
   return (
     <div className='rounded-xl bg-gray-950 p-6 text-white sm:text-left'>
@@ -96,16 +100,16 @@ export const Account = () => {
             >
               Sign Message
             </MxLink>
-            <MxLink
+            {/* <MxLink
               className='inline-block rounded-lg gradient-button px-4 py-2 text-sm text-white'
               data-testid={DataTestIdsEnum.sovereignTransferBtn}
               to={routeNames.sovereignTransfer}
             >
               Sovereign Transfer
             </MxLink>
-            {/* {isSovereign && (
+            {isSovereign && (
               <MxLink
-                className='inline-block rounded-lg bg-blue-600 px-4 py-2 text-sm text-white'
+                className='inline-block rounded-lg gradient-button px-4 py-2 text-sm text-white'
                 data-testid={DataTestIdsEnum.registerTokenBtn}
                 to={routeNames.registerToken}
               >

@@ -1,15 +1,10 @@
 import { MxLink } from 'components';
-import { EvmConnectButton } from 'components/EvmConnectButton';
-import { DataTestIdsEnum, HooksEnum } from 'localConstants';
-import { useSelector } from 'react-redux';
-import { hookSelector } from 'redux/selectors';
+import { DataTestIdsEnum } from 'localConstants';
 import { AuthRedirectWrapper } from 'wrappers';
 import { CreateRecoverRoutesEnum } from '../CreateRecover/routes';
 import { Keystore, Pem } from './components';
 
 export const Unlock = () => {
-  const { type: hook } = useSelector(hookSelector);
-
   return (
     <AuthRedirectWrapper requireAuth={false}>
       <div className='flex justify-center items-center'>
@@ -43,8 +38,6 @@ export const Unlock = () => {
               data-testid='xAliasLoginBtn'
               {...commonProps}
             /> */}
-
-            {hook !== HooksEnum.login && <EvmConnectButton />}
 
             <Pem />
             <Keystore />

@@ -1,33 +1,25 @@
 import { useRef, useState } from 'react';
 
-import { Loader } from 'components';
-import { getEgldLabel } from 'lib';
-import { DataTestIdsEnum } from 'localConstants';
-
-import {
-  useGetFaucetSettingsQuery,
-  useRequestFundsMutation
-} from 'redux/endpoints';
+import { useRequestFundsMutation } from 'redux/endpoints';
 import { FaucetError } from '../FaucetError';
 import { FaucetScreen } from '../FaucetScreen';
 import { FaucetSuccess } from '../FaucetSuccess';
+import { useGetAccount } from 'lib';
 
 export const FaucetModal = () => {
   const ref = useRef(null);
   const [getFunds, { isSuccess }] = useRequestFundsMutation();
   const [fundsReceived, setFundsReceived] = useState(false);
   const [requestFailed, setRequestFailed] = useState('');
+  const { address } = useGetAccount();
 
-  const { data: settings, error: settingsError } = useGetFaucetSettingsQuery();
-  const egldLabel = getEgldLabel();
-
-  const handleRequestClick = async (captcha: string) => {
-    const response = await getFunds(captcha);
+  const handleRequestClick = async () => {
+    const response = await getFunds(address);
 
     if ('error' in response) {
       setRequestFailed(
         (response.error as any).data.message ||
-          'The faucet is available once every 24 hours.'
+          'Faucet not available. Try again later.'
       );
     }
 
@@ -35,24 +27,6 @@ export const FaucetModal = () => {
       setFundsReceived(true);
     }
   };
-
-  if (settingsError) {
-    return <FaucetError message='Faucet not available. Try again later.' />;
-  }
-
-  if (!settings?.token) {
-    return (
-      <div className='flex flex-col'>
-        <h1
-          className='text-2xl whitespace-nowrap mt-2'
-          data-testid={DataTestIdsEnum.modalTitle}
-        >
-          {egldLabel} Faucet
-        </h1>
-        <Loader />
-      </div>
-    );
-  }
 
   if (requestFailed) {
     return <FaucetError message={requestFailed} />;
@@ -63,9 +37,9 @@ export const FaucetModal = () => {
   return (
     <div ref={ref} className='flex flex-col flex-grow'>
       {showFaucetScreen ? (
-        <FaucetScreen settings={settings} onRequestClick={handleRequestClick} />
+        <FaucetScreen onRequestClick={handleRequestClick} />
       ) : (
-        <FaucetSuccess token={settings.token} />
+        <FaucetSuccess />
       )}
     </div>
   );

@@ -16,14 +16,11 @@ import {
   addressIsValid,
   calculateGasLimit
 } from 'lib';
-import {
-  DECIMALS,
-  GAS_LIMIT,
-  GAS_PRICE,
-  SearchParamsEnum
-} from 'localConstants';
+import { DECIMALS, GAS_PRICE, SearchParamsEnum } from 'localConstants';
 import { SendTypeEnum, TokenOptionType, PartialNftType } from 'types';
 import { FormFieldsEnum } from '../types';
+
+const GAS_LIMIT = 400_000;
 
 export const useSendForm = () => {
   const { address, account } = useGetAccountInfo();
@@ -49,7 +46,7 @@ export const useSendForm = () => {
     initialValues: {
       [FormFieldsEnum.amount]: '',
       [FormFieldsEnum.data]: '',
-      [FormFieldsEnum.gasLimit]: GAS_LIMIT,
+      [FormFieldsEnum.gasLimit]: '',
       [FormFieldsEnum.receiver]: '',
       [FormFieldsEnum.token]: defaultTokenOption,
       [FormFieldsEnum.type]: SendTypeEnum.esdt
@@ -230,6 +227,10 @@ export const useSendForm = () => {
       });
 
       gasLimit = calculateNftGasLimit(data);
+    }
+
+    if (new BigNumber(gasLimit).isLessThan(GAS_LIMIT)) {
+      gasLimit = GAS_LIMIT.toFixed();
     }
 
     formik.setFieldValue(FormFieldsEnum.data, data);

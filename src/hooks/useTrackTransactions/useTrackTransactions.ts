@@ -1,19 +1,8 @@
-import { Address, Transaction } from '@multiversx/sdk-core/out';
-import {
-  addTransactionToast,
-  moveTransactionsToSignedState,
-  MoveTransactionsToSignedStatePayloadType,
-  updateSignedTransactionStatus
-} from '@multiversx/sdk-dapp/reduxStore/slices';
+import { updateSignedTransactionStatus } from '@multiversx/sdk-dapp/reduxStore/slices';
 import { store } from '@multiversx/sdk-dapp/reduxStore/store';
-import {
-  SignedTransactionType,
-  TransactionBatchStatusesEnum,
-  TransactionServerStatusesEnum
-} from '@multiversx/sdk-dapp/types';
 import axios from 'axios';
-import { crossAddressTransferMvxContract, chainId } from 'config';
-import { getCurrentNetwork, useLocalStorage } from 'helpers';
+import { getCurrentNetwork } from 'helpers';
+import useLocalStorage from 'helpers/app/useLocalStorage';
 import { useGetPendingTransactions } from 'lib';
 import { useEffect } from 'react';
 
@@ -28,7 +17,7 @@ export const useTrackTransactions = () => {
 
   const [pendingTransactions, setPendingTransactions] = useLocalStorage<
     PendingTransaction[]
-  >(`pending_evm_tsx`, []);
+  >(`pending_tsx`, []);
 
   const { pendingTransactions: mvxPendingTransactions } =
     useGetPendingTransactions();
@@ -134,38 +123,4 @@ export const useTrackTransactions = () => {
 
     return () => clearInterval(intervalId);
   }, [pendingTransactions]);
-
-  const showTransactionToast = async (hash: string) => {
-    const txHash = hash.startsWith('0x') ? hash.slice(2) : hash;
-    const sessionId = Date.now().toString();
-    // mock a transaction
-    const transaction = new Transaction({
-      sender: new Address(crossAddressTransferMvxContract),
-      receiver: new Address(crossAddressTransferMvxContract),
-      chainID: chainId,
-      data: undefined,
-      gasLimit: 5000000
-    });
-
-    const parsedTransaction: SignedTransactionType = {
-      ...transaction.toPlainObject(),
-      hash: txHash,
-      status: TransactionServerStatusesEnum.pending
-    };
-
-    const payload: MoveTransactionsToSignedStatePayloadType = {
-      sessionId,
-      // @ts-ignore
-      transactions: [parsedTransaction],
-      status: TransactionBatchStatusesEnum.sent,
-      customTransactionInformation: {
-        signWithoutSending: true
-      }
-    };
-
-    store.dispatch(moveTransactionsToSignedState(payload));
-    store.dispatch(addTransactionToast(sessionId));
-  };
-
-  return { showTransactionToast };
 };

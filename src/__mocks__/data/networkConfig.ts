@@ -10,7 +10,7 @@ export const networkConfig = {
       erd_latest_tag_software_version: 'D1.3.50.0-hf01',
       erd_max_gas_per_transaction: 600000000,
       erd_meta_consensus_group_size: 58,
-      erd_min_gas_limit: 50000,
+      erd_min_gas_limit: 500000,
       erd_min_gas_price: 1000000000,
       erd_min_transaction_version: 1,
       erd_num_metachain_nodes: 58,

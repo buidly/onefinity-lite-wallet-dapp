@@ -5,19 +5,17 @@ import { KeystoreModal } from 'pages/Unlock/components/Keystore/components/Keyst
 import { PemModal } from 'pages/Unlock/components/Pem/components/PemModal';
 import { accountSelector, hookSelector } from 'redux/selectors';
 import { FileLoginEnum } from 'redux/slices';
-import { useGlobalContext } from 'context/useGlobalContext';
 
 export const PrivateKeyCheckWrapper = ({ children }: PropsWithChildren) => {
   const { type: hook } = useSelector(hookSelector);
   const { fileLogin } = useSelector(accountSelector);
-  const { evmAccount } = useGlobalContext();
 
   const [show, setShow] = useState(
-    !provider.isInitialized() && Boolean(fileLogin) && !evmAccount
+    !provider.isInitialized() && Boolean(fileLogin)
   );
 
   const handleModalClose = () => {
-    setShow(!provider.isInitialized() && Boolean(fileLogin) && !evmAccount);
+    setShow(!provider.isInitialized() && Boolean(fileLogin));
   };
 
   const hideChildren = show && hook;

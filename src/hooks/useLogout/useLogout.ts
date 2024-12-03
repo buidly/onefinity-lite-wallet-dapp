@@ -7,7 +7,6 @@ import { hookSelector } from 'redux/selectors';
 import { routeNames } from 'routes';
 import { WindowProviderResponseEnums } from 'types';
 import { useReplyToDapp } from '../useReplyToDapp';
-import { useGlobalContext } from 'context/useGlobalContext';
 
 const shouldAttemptReLogin = false; // use for special cases where you want to re-login after logout
 const options = {
@@ -30,7 +29,6 @@ export const useLogout = () => {
   const navigate = useNavigate();
   const { type: hook } = useSelector(hookSelector);
   const replyToDapp = useReplyToDapp();
-  const { evmAccount, evmDisconnect } = useGlobalContext();
 
   const onRedirect = () => {
     dispatch(logoutAction());
@@ -55,12 +53,7 @@ export const useLogout = () => {
 
   options.shouldBroadcastLogoutAcrossTabs = hook !== HooksEnum.logout;
 
-  return () => {
-    if (evmAccount) {
-      evmDisconnect();
-      return;
-    }
-
+  return () =>
     logout(
       routeNames.unlock,
       /*
@@ -70,5 +63,4 @@ export const useLogout = () => {
       shouldAttemptReLogin,
       options
     );
-  };
 };
