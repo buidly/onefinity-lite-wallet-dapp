@@ -160,7 +160,7 @@ export const IssueTokenForm = () => {
       </div>
       <div className='mt-4 flex flex-col align-middle'>
         <Button
-          className='mt-4 mx-auto rounded-lg  px-4 py-2 text-white'
+          className='mt-4 mx-auto rounded-lg  px-4 py-2 text-white gradient-button'
           data-testid={DataTestIdsEnum.issueTokenBtn}
           type='submit'
         >

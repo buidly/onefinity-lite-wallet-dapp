@@ -266,7 +266,7 @@ export const SovereignTransferForm = () => {
                 <div className='flex flex-row gap-2'>
                   {index === array.length - 1 && (
                     <Button
-                      className='mt-4 rounded-lg px-4 py-2 text-white'
+                      className='mt-4 rounded-lg px-4 py-2 text-white gradient-button'
                       data-testid={DataTestIdsEnum.addTokenBtn}
                       onClick={handleAddToken}
                     >
@@ -275,7 +275,7 @@ export const SovereignTransferForm = () => {
                   )}
                   {index > 0 && (
                     <Button
-                      className='mt-4 rounded-lg bg-red-600 px-4 py-2 text-white'
+                      className='mt-4 rounded-lg bg-red-600 px-4 py-2 text-white gradient-button'
                       data-testid={`${DataTestIdsEnum.removeTokenBtn}${index}`}
                       onClick={handleRemoveToken(index)}
                     >
@@ -290,7 +290,7 @@ export const SovereignTransferForm = () => {
       </div>
       <div className='mt-4 flex flex-col align-middle'>
         <Button
-          className='mt-4 mx-auto rounded-lg px-4 py-2 text-white'
+          className='mt-4 mx-auto rounded-lg px-4 py-2 text-white gradient-button'
           data-testid={DataTestIdsEnum.sendBtn}
           type='submit'
         >
