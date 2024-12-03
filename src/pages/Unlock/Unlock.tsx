@@ -4,10 +4,31 @@ import { AuthRedirectWrapper } from 'wrappers';
 import { CreateRecoverRoutesEnum } from '../CreateRecover/routes';
 import { Keystore, Pem } from './components';
 import { crossEcosystemDashboard } from 'config';
+import { nativeAuth } from 'config';
 import { useSelector } from 'react-redux';
 import { hookSelector } from 'redux/selectors';
+import { routeNames } from 'routes';
+import {
+  LedgerLoginButtonPropsType,
+  OperaWalletLoginButtonPropsType,
+  WalletConnectLoginButtonPropsType
+} from 'types';
+import { useUnlockRedirect } from './hooks';
+
+type CommonPropsType =
+  | OperaWalletLoginButtonPropsType
+  | LedgerLoginButtonPropsType
+  | WalletConnectLoginButtonPropsType;
 
 export const Unlock = () => {
+  const onUnlockRedirect = useUnlockRedirect();
+
+  const commonProps: CommonPropsType = {
+    callbackRoute: routeNames.dashboard,
+    nativeAuth,
+    onLoginRedirect: () => onUnlockRedirect()
+  };
+
   const { type: hook } = useSelector(hookSelector);
 
   return (
