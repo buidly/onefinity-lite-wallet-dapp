@@ -74,14 +74,14 @@ export const Unlock = () => {
             <p className='text-center text-gray-400'>Don't have a wallet?</p>
             <div className='flex flex-col md:flex-row md:gap-4 items-center justify-center'>
               <MxLink
-                className='text-blue-400 underline decoration-dotted hover:decoration-solid'
+                className='text-black underline decoration-dotted hover:decoration-solid'
                 data-testid={DataTestIdsEnum.createWalletBtn}
                 to={CreateRecoverRoutesEnum.create}
               >
                 Create
               </MxLink>
               <MxLink
-                className='text-blue-400 underline decoration-dotted hover:decoration-solid'
+                className='text-black underline decoration-dotted hover:decoration-solid'
                 data-testid={DataTestIdsEnum.recoverWalletBtn}
                 to={CreateRecoverRoutesEnum.recover}
               >

@@ -62,33 +62,33 @@ export const Account = () => {
             <a
               href={`${explorerAddress}/accounts/${address}`}
               target='_blank'
-              className='inline-block rounded-lg bg-blue-600 px-4 py-2 text-sm text-white'
+              className='inline-block rounded-lg gradient-button px-4 py-2 text-sm text-white'
             >
               Open in Explorer
             </a>
             {isSovereign && <Faucet />}
             <MxLink
-              className='inline-block rounded-lg bg-blue-600 px-4 py-2 text-sm text-white'
+              className='inline-block rounded-lg gradient-button px-4 py-2 text-sm text-white'
               data-testid={DataTestIdsEnum.sendBtn}
               to={routeNames.send}
             >
               Send
             </MxLink>
             <MxLink
-              className='inline-block rounded-lg bg-blue-600 px-4 py-2 text-sm text-white'
+              className='inline-block rounded-lg gradient-button px-4 py-2 text-sm text-white'
               data-testid={DataTestIdsEnum.signMessageBtn}
               to={routeNames.signMessage}
             >
               Sign Message
             </MxLink>
             <MxLink
-              className='inline-block rounded-lg bg-blue-600 px-4 py-2 text-sm text-white'
+              className='inline-block rounded-lg gradient-button px-4 py-2 text-sm text-white'
               data-testid={DataTestIdsEnum.sovereignTransferBtn}
               to={routeNames.sovereignTransfer}
             >
               Sovereign Transfer
             </MxLink>
-            {isSovereign && (
+            {/* {isSovereign && (
               <MxLink
                 className='inline-block rounded-lg bg-blue-600 px-4 py-2 text-sm text-white'
                 data-testid={DataTestIdsEnum.registerTokenBtn}
@@ -96,7 +96,7 @@ export const Account = () => {
               >
                 Register Token
               </MxLink>
-            )}
+            )} */}
           </div>
         </div>
         <div className='mb-2 hidden justify-center sm:block'>

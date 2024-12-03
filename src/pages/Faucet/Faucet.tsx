@@ -20,7 +20,7 @@ export const Faucet = () => {
   return (
     <>
       <Button
-        className='inline-block rounded-lg bg-blue-600 px-4 py-2 text-sm text-white'
+        className='inline-block rounded-lg px-4 py-2 text-sm text-white'
         data-testid={DataTestIdsEnum.faucetBtn}
         onClick={handleShow}
       >

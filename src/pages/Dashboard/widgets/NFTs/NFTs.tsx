@@ -22,14 +22,14 @@ export const NFTs = () => {
         </OutputContainer>
         <div className='mt-5 flex flex-row gap-4'>
           <MxLink
-            className='inline-block rounded-lg bg-blue-600 px-4 py-2 text-sm text-white'
+            className='inline-block rounded-lg gradient-button px-4 py-2 text-sm text-white'
             data-testid={DataTestIdsEnum.issueNftBtn}
             to={routeNames.createNft}
           >
             Create NFT
           </MxLink>
           <MxLink
-            className='inline-block rounded-lg bg-blue-600 px-4 py-2 text-sm text-white'
+            className='inline-block rounded-lg gradient-button px-4 py-2 text-sm text-white'
             data-testid={DataTestIdsEnum.issueCollectionBtn}
             to={routeNames.issueCollection}
           >
@@ -50,14 +50,14 @@ export const NFTs = () => {
       </OutputContainer>
       <div className='mt-5 flex flex-row gap-4'>
         <MxLink
-          className='inline-block rounded-lg bg-blue-600 px-4 py-2 text-sm text-white'
+          className='inline-block rounded-lg gradient-button px-4 py-2 text-sm text-white'
           data-testid={DataTestIdsEnum.issueNftBtn}
           to={routeNames.createNft}
         >
           Create NFT
         </MxLink>
         <MxLink
-          className='inline-block rounded-lg bg-blue-600 px-4 py-2 text-sm text-white'
+          className='inline-block rounded-lg gradient-button px-4 py-2 text-sm text-white'
           data-testid={DataTestIdsEnum.issueCollectionBtn}
           to={routeNames.issueCollection}
         >

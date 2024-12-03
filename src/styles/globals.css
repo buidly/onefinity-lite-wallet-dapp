@@ -11,17 +11,17 @@
   }
 }
 
-.mx-transactions > td {
+.mx-transactions>td {
   @apply p-2;
 }
 
-.mx-transactions td > span,
-.mx-transactions td > div {
+.mx-transactions td>span,
+.mx-transactions td>div {
   @apply flex w-max;
 }
 
-.mx-transactions td > div > a {
-  @apply text-blue-600;
+.mx-transactions td>div>a {
+  @apply text-black;
 }
 
 .output-container {
@@ -32,7 +32,8 @@
   max-width: 600px !important;
 }
 
-.dapp-core-component__dappModalStyles__dappModalBody, .dapp-core-component__dappModalStyles__dappModalContent {
+.dapp-core-component__dappModalStyles__dappModalBody,
+.dapp-core-component__dappModalStyles__dappModalContent {
   border-radius: 12px !important;
 }
 
@@ -48,19 +49,37 @@
   margin: 0 !important;
 }
 
-.dapp-core-component__signWithDeviceModalStyles__title, .dapp-core-component__confirmAmountDataStyles__confirmAmountDataBalance {
+.dapp-core-component__signWithDeviceModalStyles__title,
+.dapp-core-component__confirmAmountDataStyles__confirmAmountDataBalance {
   color: #000 !important;
   font-size: 1.5em !important;
   margin-bottom: 10px !important;
 }
 
 .dapp-core-component__signWithDeviceModalStyles__sign-button-cancel {
-  @apply text-blue-600 !important;
+  background: var(--Radial-Color,
+      radial-gradient(46.56% 199.07% at 50.19% 199.07%,
+        #6c08aa 0%,
+        #7f0cd9 43.8%,
+        #35185b 100%));
   margin-top: 24px !important;
 }
 
 .dapp-core-component__main__btn-primary {
-  @apply bg-blue-600 !important;
+  background: var(--Radial-Color,
+      radial-gradient(46.56% 199.07% at 50.19% 199.07%,
+        #6c08aa 0%,
+        #7f0cd9 43.8%,
+        #35185b 100%));
+  border-color: unset !important;
+}
+
+.gradient-button {
+  background: var(--Radial-Color,
+      radial-gradient(46.56% 199.07% at 50.19% 199.07%,
+        #6c08aa 0%,
+        #7f0cd9 43.8%,
+        #35185b 100%));
 }
 
 .dapp-core-component__signWithDeviceModalStyles__sign-buttons {
@@ -89,7 +108,8 @@
   padding: 40px 0 !important;
 }
 
-.dapp-core-component__main__card-body, .dapp-core-component__dappModalStyles__dappModalBody {
+.dapp-core-component__main__card-body,
+.dapp-core-component__dappModalStyles__dappModalBody {
   padding: 0 !important;
 }
 

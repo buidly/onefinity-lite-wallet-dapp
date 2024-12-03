@@ -34,7 +34,7 @@ export const RecoverMnemonics = ({
 
   const goToUnlockSection = (
     <MxLink
-      className='text-blue-400 underline decoration-dotted hover:decoration-solid'
+      className='text-black underline decoration-dotted hover:decoration-solid'
       to={routeNames.unlock}
     >
       Back to unlock

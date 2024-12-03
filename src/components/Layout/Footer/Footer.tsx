@@ -16,10 +16,10 @@ export const Footer = () => {
         <a
           target='_blank'
           className='flex items-center text-sm hover:underline'
-          href='https://multiversx.com/'
+          href='https://onefinity.network/'
         >
           Made with <HeartIcon className='mx-1 fill-gray-400' /> by the
-          MultiversX team
+          Onefinity team
         </a>
         {walletVersion && (
           <span className='text-sm text-gray-400'>

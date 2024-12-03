@@ -23,7 +23,7 @@ export const Tokens = () => {
         </OutputContainer>
         <div className='mt-5'>
           <MxLink
-            className='inline-block rounded-lg bg-blue-600 px-4 py-2 text-sm text-white'
+            className='inline-block rounded-lg gradient-button px-4 py-2 text-sm text-white'
             data-testid={DataTestIdsEnum.issueTokenBtn}
             to={routeNames.issueToken}
           >
@@ -43,7 +43,7 @@ export const Tokens = () => {
       </OutputContainer>
       <div className='mt-5'>
         <MxLink
-          className='inline-block rounded-lg bg-blue-600 px-4 py-2 text-sm text-white'
+          className='inline-block rounded-lg gradient-button px-4 py-2 text-sm text-white'
           data-testid={DataTestIdsEnum.issueTokenBtn}
           to={routeNames.issueToken}
         >

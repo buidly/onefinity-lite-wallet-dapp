@@ -124,7 +124,7 @@ export const CreateQuiz = ({
             </Button>
 
             <Button
-              className='text-blue-400 underline decoration-dotted hover:decoration-solid'
+              className='text-black underline decoration-dotted hover:decoration-solid'
               data-testid={DataTestIdsEnum.backToWordsButton}
               onClick={onBack}
             >

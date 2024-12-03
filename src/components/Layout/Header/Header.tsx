@@ -3,7 +3,7 @@ import { MxLink } from 'components/MxLink';
 import { useGetIsLoggedIn } from 'lib';
 import { DataTestIdsEnum, RouteNamesEnum } from 'localConstants';
 import { routeNames } from 'routes';
-import MultiversXLogo from '../../../assets/img/multiversx-logo.svg?react';
+import MultiversXLogo from '../../../assets/img/onefinity-logo.svg?react';
 // import { NetworkSwitcher } from '../../NetworkSwitcher';
 
 export const Header = () => {

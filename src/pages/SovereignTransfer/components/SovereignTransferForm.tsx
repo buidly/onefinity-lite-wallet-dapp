@@ -266,7 +266,7 @@ export const SovereignTransferForm = () => {
                 <div className='flex flex-row gap-2'>
                   {index === array.length - 1 && (
                     <Button
-                      className='mt-4 rounded-lg bg-blue-600 px-4 py-2 text-white'
+                      className='mt-4 rounded-lg px-4 py-2 text-white'
                       data-testid={DataTestIdsEnum.addTokenBtn}
                       onClick={handleAddToken}
                     >
@@ -290,14 +290,14 @@ export const SovereignTransferForm = () => {
       </div>
       <div className='mt-4 flex flex-col align-middle'>
         <Button
-          className='mt-4 mx-auto rounded-lg bg-blue-600 px-4 py-2 text-white'
+          className='mt-4 mx-auto rounded-lg px-4 py-2 text-white'
           data-testid={DataTestIdsEnum.sendBtn}
           type='submit'
         >
           Send
         </Button>
         <MxLink
-          className='block w-full mt-2 px-4 py-2 text-sm text-center text-blue-600'
+          className='block w-full mt-2 px-4 py-2 text-sm text-center text-black'
           data-testid={DataTestIdsEnum.cancelBtn}
           to={routeNames.dashboard}
         >

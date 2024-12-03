@@ -99,7 +99,7 @@ export const CreateDisclaimerScreen = ({
       <div className='flex flex-col items-center justify-center mt-1 gap-1'>
         <p>Already have a wallet?</p>
         <MxLink
-          className='text-blue-400 underline decoration-dotted hover:decoration-solid'
+          className='text-black underline decoration-dotted hover:decoration-solid'
           to={routeNames.unlock}
         >
           Access it

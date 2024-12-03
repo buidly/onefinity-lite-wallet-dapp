@@ -123,7 +123,7 @@ export const SignMessage = () => {
           {isSuccess || isError ? (
             <Button
               data-testid={DataTestIdsEnum.cancelSignMessageBtn}
-              className='mx-auto rounded-lg bg-blue-600 px-4 py-2 text-sm text-white'
+              className='mx-auto rounded-lg px-4 py-2 text-sm text-white'
               id='closeButton'
               onClick={handleSignMessageCloseFlow}
             >
@@ -135,7 +135,7 @@ export const SignMessage = () => {
             </Button>
           ) : (
             <Button
-              className='mx-auto rounded-lg bg-blue-600 px-4 py-2 text-sm text-white'
+              className='mx-auto rounded-lg px-4 py-2 text-sm text-white'
               data-testid={DataTestIdsEnum.signMessageBtn}
               onClick={handleSubmit}
             >
@@ -145,7 +145,7 @@ export const SignMessage = () => {
 
           <Button
             data-testid={DataTestIdsEnum.cancelSignMessageBtn}
-            className='mx-auto text-blue-600 text-sm'
+            className='mx-auto text-black text-sm'
             id='closeButton'
             onClick={handleSignMessageCloseFlow}
           >

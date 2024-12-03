@@ -280,7 +280,7 @@ export const KeystoreModal = ({ handleClose, show }: UseModalReturnType) => {
                       Access Wallet
                     </Button>
                     <button
-                      className='mt-2 text-blue-600'
+                      className='mt-2 text-black'
                       data-testid={DataTestIdsEnum.closeButton}
                       id={DataTestIdsEnum.closeButton}
                       onClick={handleModalClose}

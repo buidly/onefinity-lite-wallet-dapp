@@ -1,10 +1,10 @@
 {
-  "name": "@multiversx/mx-lite-wallet-dapp",
-  "description": "MultiversX Lite Wallet DApp",
+  "name": "@onefinity/onefinity-lite-wallet-dapp",
+  "description": "Onefinity Lite Wallet DApp",
   "version": "1.0.3",
-  "author": "MultiversX",
+  "author": "Onefinity",
   "license": "GPL-3.0-or-later",
-  "repository": "@multiversx/mx-lite-wallet-dapp",
+  "repository": "@onefinity/onefinity-lite-wallet-dapp",
   "scripts": {
     "set-storage-persist": "node src/scripts/sdkDappStorageConfig",
     "lint": "eslint --fix --ext js,ts,tsx src",

@@ -21,7 +21,7 @@ export const Button = ({
 }: ButtonType) => {
   return (
     <button
-      className={className}
+      className={`${className} gradient-button`}
       data-testid={otherProps['data-testid']}
       disabled={disabled}
       id={id}

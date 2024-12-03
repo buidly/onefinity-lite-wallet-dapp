@@ -17,12 +17,12 @@ export const CreateRecoverDownloadScreen = ({
       <div className='flex flex-col items-center justify-center gap-4 w-full mt-4'>
         <PageState
           icon={faCheckCircle}
-          iconClass='fa-3x text-blue-600'
+          iconClass='fa-3x text-black'
           description={infoSection}
         />
 
         <MxLink
-          className='text-blue-400 underline decoration-dotted hover:decoration-solid'
+          className='text-black underline decoration-dotted hover:decoration-solid'
           data-testid={DataTestIdsEnum.accessWalletBtn}
           to={routeNames.unlock}
         >
