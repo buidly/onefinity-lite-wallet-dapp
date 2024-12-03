@@ -23,6 +23,7 @@ type CommonPropsType =
 export const Unlock = () => {
   const onUnlockRedirect = useUnlockRedirect();
 
+  // @ts-ignore
   const commonProps: CommonPropsType = {
     callbackRoute: routeNames.dashboard,
     nativeAuth,

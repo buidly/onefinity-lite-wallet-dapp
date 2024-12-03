@@ -11,7 +11,6 @@ export const Tokens = () => {
   const { websocketEvent, address } = useGetAccountInfo();
   const [fetchTokens, { data: tokens, isLoading, error }] =
     useLazyGetTokensQuery();
-  console.log({ tokens, isLoading, error });
 
   useEffect(() => {
     fetchTokens(address);
