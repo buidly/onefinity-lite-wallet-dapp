@@ -12,6 +12,7 @@ import {
 import { networkSelector } from 'redux/selectors';
 import { routeNames } from 'routes';
 import { useMemo } from 'react';
+import { crossEcosystemDashboard } from 'config';
 
 export const Account = () => {
   const { network } = useGetNetworkConfig();
@@ -84,6 +85,13 @@ export const Account = () => {
               className='inline-block rounded-lg gradient-button px-4 py-2 text-sm text-white'
             >
               Open in Explorer
+            </a>
+            <a
+              href={`${crossEcosystemDashboard}`}
+              target='_blank'
+              className='inline-block rounded-lg gradient-button px-4 py-2 text-sm text-white'
+            >
+              Open Cross Ecosystem Dashboard
             </a>
             {isSovereign && <Faucet />}
             <MxLink

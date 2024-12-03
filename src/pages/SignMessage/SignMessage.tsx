@@ -145,7 +145,7 @@ export const SignMessage = () => {
 
           <Button
             data-testid={DataTestIdsEnum.cancelSignMessageBtn}
-            className='mx-auto text-black text-sm gradient-button'
+            className='mx-auto text-black text-sm'
             id='closeButton'
             onClick={handleSignMessageCloseFlow}
           >

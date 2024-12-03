@@ -54,8 +54,5 @@ export const networks: NetworkType[] = [
   }
 ];
 
-export const chainId = '999987';
-export const crossAddressTransferMvxContract =
-  'one1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9lllsjtkurw';
-export const crossAddressTransferEvmContract =
-  '0x6574682d2d6f6e651d88bf2058ef8fa5128c5e12';
+export const crossEcosystemDashboard =
+  'https://testnet-wallet.onefinity.network';

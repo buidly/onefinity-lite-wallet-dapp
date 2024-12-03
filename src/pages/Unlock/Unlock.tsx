@@ -3,6 +3,7 @@ import { DataTestIdsEnum } from 'localConstants';
 import { AuthRedirectWrapper } from 'wrappers';
 import { CreateRecoverRoutesEnum } from '../CreateRecover/routes';
 import { Keystore, Pem } from './components';
+import { crossEcosystemDashboard } from 'config';
 
 export const Unlock = () => {
   return (
@@ -59,6 +60,17 @@ export const Unlock = () => {
               >
                 Recover
               </MxLink>
+            </div>
+          </div>
+          <div className='flex flex-col items-center justify-center mt-1 gap-1'>
+            <div className='flex flex-col md:flex-row md:gap-4 items-center justify-center'>
+              <a
+                href={`${crossEcosystemDashboard}`}
+                target='_blank'
+                className='text-black underline decoration-dotted hover:decoration-solid'
+              >
+                Go to cross ecosystem dashboard
+              </a>
             </div>
           </div>
         </div>
