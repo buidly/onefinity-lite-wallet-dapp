@@ -33,7 +33,7 @@ export const networks: NetworkType[] = [
     id: 'sovereign',
     name: 'Sovereign',
     apiAddress: 'https://testnet-api.onefinity.network',
-    gatewayUrl: 'https://testnet-gateway.onefinity.network',
+    gatewayUrl: '',
     extrasApi: 'https://extras-api.multiversx.com',
     sampleAuthenticatedDomains: ['https://testnet-api.onefinity.network'],
     sovereignContractAddress: '',

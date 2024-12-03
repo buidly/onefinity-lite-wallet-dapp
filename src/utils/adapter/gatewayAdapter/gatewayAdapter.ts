@@ -6,7 +6,6 @@ import { getGatewayResponse } from './helpers/getGatewayResponse';
 axios.interceptors.request.use(
   function (config) {
     const { apiAddress, gatewayUrl } = getCurrentNetwork();
-    console.log(config.url, config.baseURL);
 
     if (!config.url || (apiAddress && !gatewayUrl)) {
       return config;
