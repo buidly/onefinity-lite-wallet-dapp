@@ -9,8 +9,7 @@ import { TokenRow } from './components';
 
 export const Tokens = () => {
   const { websocketEvent, address } = useGetAccountInfo();
-  const [fetchTokens, { data: tokens, isLoading, error }] =
-    useLazyGetTokensQuery();
+  const [fetchTokens, { data: tokens, isLoading }] = useLazyGetTokensQuery();
 
   useEffect(() => {
     fetchTokens(address);
