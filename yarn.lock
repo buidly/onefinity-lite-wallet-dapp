@@ -2070,10 +2070,10 @@
     lodash "^4.17.21"
     zustand "^4.4.7"
 
-"@multiversx/sdk-dapp-form@1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@multiversx/sdk-dapp-form/-/sdk-dapp-form-1.1.2.tgz#6956e2da29d1b419265118ad2297bdf0043e4dc1"
-  integrity sha512-HUnHJvzg9LUlFKEeg2A0U18X8Q8MLXJCsuyE72/abxIHGQdoj+BC/ZYjJNQNNhYGTcfHUDKX9Fi8/qhgk3JaeQ==
+"@multiversx/sdk-dapp-form@1.1.4-alpha.0":
+  version "1.1.4-alpha.0"
+  resolved "https://registry.yarnpkg.com/@multiversx/sdk-dapp-form/-/sdk-dapp-form-1.1.4-alpha.0.tgz#c86128e7720ff156ea1f488792450872640d4848"
+  integrity sha512-+hAkZ9RLLrAFg4afxb70+tPT3BxE2tERxFBX9O/EsZivwvUW41sBnT01BOfEOTPZ2GWJ96gOg0ZXMqeU+bER4Q==
   dependencies:
     anchorme "2.1.2"
     bech32 "2.0.0"
@@ -2096,10 +2096,10 @@
   resolved "https://registry.yarnpkg.com/@multiversx/sdk-dapp-utils/-/sdk-dapp-utils-1.0.0.tgz#915508726fad0cc57bd29791b58eec213ea81c4b"
   integrity sha512-aPjlbOI5v/95DXc7eqJKI7FlQGrs6s/gQnMAClWEbG6a+Ul3OQOxlLJrxQY1EHfV7roFcvM4yShU5tNILa1srQ==
 
-"@multiversx/sdk-dapp@3.0.10":
-  version "3.0.10"
-  resolved "https://registry.yarnpkg.com/@multiversx/sdk-dapp/-/sdk-dapp-3.0.10.tgz#95ca493d15c54789b666222461c14e66be7b8e81"
-  integrity sha512-SCALX/vNdIRRGmU6ptKRdoRkc9ESugtxgBhNWMinV0672LZEBCBNiM32rSM4lbJLwEGV2wqLpm3NYNi5SHebfA==
+"@multiversx/sdk-dapp@3.0.24-alpha.1":
+  version "3.0.24-alpha.1"
+  resolved "https://registry.yarnpkg.com/@multiversx/sdk-dapp/-/sdk-dapp-3.0.24-alpha.1.tgz#511aab08bd6fa861fa9ae3abace38d2250dad7de"
+  integrity sha512-JgeXheIr4q2vyl18ikvJALrruFe6s/wVqPklaR2o5o3oObzs3fOuV+RW1nVSt4sAi82N1KAfJ5ooFOUbtkE74g==
   dependencies:
     "@lifeomic/axios-fetch" "3.0.1"
     "@metamask/providers" "16.0.0"
@@ -2111,10 +2111,10 @@
     "@multiversx/sdk-opera-provider" "1.0.0-alpha.1"
     "@multiversx/sdk-passkey-provider" "2.0.0"
     "@multiversx/sdk-wallet-connect-provider" "5.0.0"
-    "@multiversx/sdk-web-wallet-cross-window-provider" "2.0.1"
+    "@multiversx/sdk-web-wallet-cross-window-provider" "2.0.2"
     "@multiversx/sdk-web-wallet-iframe-provider" "2.0.1"
     "@multiversx/sdk-web-wallet-provider" "4.0.0"
-    "@multiversx/sdk-webview-provider" "2.0.0-alpha.0"
+    "@multiversx/sdk-webview-provider" "2.0.2"
     "@reduxjs/toolkit" "1.8.2"
     bignumber.js "9.x"
     linkify-react "4.0.2"
@@ -2257,6 +2257,13 @@
   dependencies:
     qs "6.11.2"
 
+"@multiversx/sdk-web-wallet-cross-window-provider@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@multiversx/sdk-web-wallet-cross-window-provider/-/sdk-web-wallet-cross-window-provider-2.0.2.tgz#ec9176c44b561d906d6613486bfc6e089ee8f3a1"
+  integrity sha512-HULqqmS09OX3cymIuC+DzCzsSdkqwAa9ZXZK7xQDwPiWiUOulrA1Tj8BeqmdxfqyOfeeBWW9oNpueCEqm4jigg==
+  dependencies:
+    qs "6.11.2"
+
 "@multiversx/sdk-web-wallet-iframe-provider@2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@multiversx/sdk-web-wallet-iframe-provider/-/sdk-web-wallet-iframe-provider-2.0.1.tgz#0c31b59269eab92c4b7373dbb526751171394836"
@@ -2287,10 +2294,10 @@
   dependencies:
     qs "6.10.3"
 
-"@multiversx/sdk-webview-provider@2.0.0-alpha.0":
-  version "2.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@multiversx/sdk-webview-provider/-/sdk-webview-provider-2.0.0-alpha.0.tgz#3a009ae9776b3739073d078f1709fe1dd9a30883"
-  integrity sha512-taHNTTXSAcn/z1fJN8e/y7XzLvBvMOABqHVSIiburWvOXkki7HY2snIpW3/N1h/VzOBjL9NEneLRucbZIgRBDg==
+"@multiversx/sdk-webview-provider@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@multiversx/sdk-webview-provider/-/sdk-webview-provider-2.0.2.tgz#cd58d6e78394527b4a268112d10a1c8927f0aa80"
+  integrity sha512-jJa4/EsvnPi01aryMXHDsOOFJriQF2PsMnPVSDfq2YzjZb9AYdZQ4jbTB6eHyb0VQwcy1RM1jjKqZEzLk+LHJQ==
 
 "@napi-rs/wasm-runtime@^0.2.3", "@napi-rs/wasm-runtime@^0.2.4":
   version "0.2.5"

@@ -65,6 +65,11 @@
   margin-top: 24px !important;
 }
 
+.dapp-core-component__signWithDeviceModalStyles__modal-layout-content
+  .dapp-core-component__signWithDeviceModalStyles__sign-buttons
+  .dapp-core-component__signWithDeviceModalStyles__sign-button-cancel {
+  color: #000 !important;
+}
 .dapp-core-component__main__btn-primary {
   background: var(--Radial-Color,
       radial-gradient(46.56% 199.07% at 50.19% 199.07%,
