@@ -154,3 +154,22 @@
   align-items: center;
   justify-content: flex-start;
 }
+
+.dapp-core-component__balanceStyles__balanceSymbol {
+  display: none;
+}
+
+.dapp-core-component__balanceStyles__balance {
+  position: relative;
+}
+
+.dapp-core-component__balanceStyles__balance::before {
+  content: '';
+  display: inline-block;
+  background-image: url('/src/assets/img/one.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
