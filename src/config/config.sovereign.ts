@@ -55,4 +55,4 @@ export const networks: NetworkType[] = [
 ];
 
 export const crossEcosystemDashboard =
-  'https://testnet-wallet.onefinity.network';
+  'https://testnet-ercwallet.onefinity.network/';
